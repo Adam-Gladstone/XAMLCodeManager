@@ -1,0 +1,15 @@
+<!-- A control that displays read-only text. -->
+<TextBlock
+    x:Name=""
+    Margin="0,0,0,0"
+    CharacterSpacing="0"
+    IsTextSelectionEnabled="True"
+    LineHeight="0"
+    LineStackingStrategy="MaxHeight"
+    MaxLines="0"
+    Style="{StaticResource BodyTextBlockStyle}"
+    Text="Example Text"
+    TextAlignment="Left"
+    TextTrimming="None"
+    TextWrapping="WrapWholeWords" />
+

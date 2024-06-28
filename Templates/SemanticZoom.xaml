@@ -1,0 +1,2 @@
+<!-- A container control that lets the user zoom between two views of a collection of items. -->
+<SemanticZoom x:Name="" Margin="0,0,0,0"></SemanticZoom>

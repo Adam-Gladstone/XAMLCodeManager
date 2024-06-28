@@ -1,0 +1,13 @@
+<!-- A control that let a user select a date using a drop-down calendar display -->
+<CalendarDatePicker
+    x:Name=""
+    Margin="0,0,0,0"
+    DateFormat="{}{day.integer}/{month.integer}/{year.full}"
+    DayOfWeekFormat="{}{dayofweek.abbreviated(3)}"
+    DisplayMode="Month"
+    FirstDayOfWeek="Monday"
+    Header="Calendar"
+    IsEnabled="True"
+    IsGroupLabelVisible="True"
+    IsTodayHighlighted="True"
+    PlaceholderText="Select Date" />

@@ -1,0 +1,13 @@
+<!-- A configurable calendar display that lets a user select single or multiple dates -->
+<CalendarView
+    x:Name=""
+    Margin="0,0,0,0"
+    CalendarIdentifier="GregorianCalendar"
+    DayOfWeekFormat="{}{dayofweek.abbreviated(3)}"
+    DisplayMode="Month"
+    FirstDayOfWeek="Monday"
+    IsEnabled="True"
+    IsGroupLabelVisible="False"
+    NumberOfWeeksInView="5"
+    SelectionMode="Single" />
+

@@ -1,0 +1,2 @@
+<!-- A control that presents an inline list of items that the user can select from. -->
+<ListBox x:Name="" Margin="0,0,0,0" IsEnabled="True" SelectionMode="Single" ItemsSource=""></ListBox>

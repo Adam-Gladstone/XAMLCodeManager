@@ -1,0 +1,10 @@
+<!-- A control that presents a collection of items in rows and columns that can scroll. -->
+<GridView
+    x:Name=""
+    Margin="0,0,0,0"
+    CanDragItems="False"
+    Footer="Footer"
+    Header="List"
+    IsMultiSelectCheckBoxEnabled="False"
+    SelectionMode="Single" />
+

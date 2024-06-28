@@ -1,0 +1,2 @@
+<!-- A switch that can be toggled between two states. -->
+<ToggleSwitch x:Name="" Margin="0,0,0,0" Header="Switch Theme" IsEnabled="True" IsOn="True" OffContent="Closed" OnContent="Open"></ToggleSwitch>

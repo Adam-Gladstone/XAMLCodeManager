@@ -1,0 +1,10 @@
+<!-- A control that plays audio and video content. -->
+<MediaElement
+    x:Name=""
+    Margin="0,0,0,0"
+    AreTransportControlsEnabled="True"
+    AutoPlay="True"
+    IsLooping="False"
+    Source="ms-appx:///Videos/video1.mp4"
+    Stretch="Uniform" />
+

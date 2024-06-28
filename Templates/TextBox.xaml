@@ -1,0 +1,14 @@
+<!-- A single-line or multi-line plain text field. -->
+<TextBox
+    x:Name=""
+    Margin="0,0,0,0"
+    CharacterSpacing="0"
+    Header="TextBox"
+    InputScope="Default"
+    IsEnabled="True"
+    IsReadOnly="False"
+    MaxLength="20"
+    Text="Example Text"
+    TextAlignment="Left"
+    TextWrapping="Wrap" />
+

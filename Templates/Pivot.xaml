@@ -1,0 +1,2 @@
+<!-- A full-screen container and navigation model that provides a quick way to move between different views. -->
+<Pivot x:Name="" Margin="0,0,0,0" IsEnabled="True" Title="Pivot" ItemsSource=""></Pivot>

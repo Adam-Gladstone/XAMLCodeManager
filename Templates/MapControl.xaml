@@ -1,0 +1,18 @@
+<!-- MapControl: requires xmlns:maps="using:Windows.UI.Xaml.Controls.Maps" -->
+<maps:MapControl
+    x:Name=""
+    Margin="0,0,0,0"
+    BusinessLandmarksEnabled="True"
+    ColorScheme="Light"
+    DesiredPitch="0"
+    Heading="0"
+    LandmarksVisible="True"
+    PanInteractionMode="Auto"
+    PedestrianFeaturesVisible="True"
+    RotateInteractionMode="Auto"
+    TiltInteractionMode="Auto"
+    TrafficFlowVisible="False"
+    TransitFeaturesEnabled="True"
+    ZoomInteractionMode="Auto"
+    ZoomLevel="1" />
+

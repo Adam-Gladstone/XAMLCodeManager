@@ -1,0 +1,2 @@
+<!-- A text input box that provides suggested text as the user types -->
+<AutoSuggestBox x:Name="" AutoMaximizeSuggestionArea="True" Header="Suggestions" IsSuggestionListOpen="False" IsEnabled="True" PlaceholderText="..." Margin="0,0,0,0"></AutoSuggestBox>

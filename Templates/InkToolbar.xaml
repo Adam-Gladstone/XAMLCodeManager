@@ -1,0 +1,2 @@
+<!-- A control that provides a UI for activating ink features and setting basic ink properties such as stroke size, color, and shape of the pen tip -->
+<InkToolbar x:Name="" Margin="0,0,0,0" IsRulerButtonChecked="False" IsEnabled="True"></InkToolbar>

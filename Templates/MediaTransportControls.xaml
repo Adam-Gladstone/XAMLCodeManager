@@ -1,0 +1,19 @@
+<!-- A control that provides playback controls for a media element. -->
+<MediaTransportControls
+    x:Name=""
+    Margin="0,0,0,0"
+    IsCompact="False"
+    IsEnabled="True"
+    IsFastForwardButtonVisible="True"
+    IsFastForwardEnabled="True"
+    IsFastRewindButtonVisible="True"
+    IsFastRewindEnabled="True"
+    IsFullWindowButtonVisible="False"
+    IsPlaybackRateButtonVisible="True"
+    IsPlaybackRateEnabled="True"
+    IsSeekBarVisible="True"
+    IsStopButtonVisible="True"
+    IsStopEnabled="True"
+    IsVolumeButtonVisible="True"
+    IsVolumeEnabled="True" />
+

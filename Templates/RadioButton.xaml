@@ -1,0 +1,2 @@
+<!-- A control that allows a user to select a single option from a group of options. -->
+<RadioButton x:Name="" Margin="0,0,0,0" Content="Content" IsChecked="True" IsEnabled="True" IsThreeState="False"></RadioButton>

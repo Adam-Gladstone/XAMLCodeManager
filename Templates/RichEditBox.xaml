@@ -1,0 +1,2 @@
+<!-- A control that lets the user edit rich text documents. -->
+<RichEditBox x:Name="" Margin="0,0,0,0" Header="RichEditBox" InputScope="Default" IsEnabled="True" IsReadOnly="False" PlaceholderText="Example Text"></RichEditBox>

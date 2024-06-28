@@ -1,0 +1,2 @@
+<!-- Draws an ellipse with a given height and width specified in DIPs. -->
+<Ellipse x:Name="" Margin="0,0,0,0" StrokeThickness="10" Width="100" Height="150" Fill="Aquamarine"></Ellipse>

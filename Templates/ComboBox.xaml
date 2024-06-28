@@ -1,0 +1,9 @@
+<!-- A drop-down list of items a user can select from -->
+<ComboBox
+    x:Name=""
+    Margin="0,0,0,0"
+    Header="ComboBox"
+    IsDropDownOpen="False"
+    IsEnabled="True"
+    PlaceholderText="Selection" />
+

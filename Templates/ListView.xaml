@@ -1,0 +1,2 @@
+<!-- A control that presents a collection of items in a list that can scroll vertically. -->
+<ListView x:Name="" Margin="0,0,0,0" CanDragItems="False" Header="Header" Footer="Footer" IsEnabled="True" IsMultiSelectCheckBoxEnabled="True" SelectionMode="Single" ItemsSource=""></ListView>

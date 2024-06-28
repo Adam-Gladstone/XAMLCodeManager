@@ -10,6 +10,11 @@ public class XAMLCodeTemplateService : IXAMLCodeTemplateService
 
     public void InitializeData(string path)
     {
+        if(!Directory.Exists(path)) 
+        {
+            return;
+        }
+
         _allTemplates.Clear();
 
         var files = Directory.GetFiles(path, "*.xaml", SearchOption.AllDirectories);

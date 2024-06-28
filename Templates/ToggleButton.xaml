@@ -1,0 +1,2 @@
+<!-- A button that can be toggled between two states. -->
+<ToggleButton x:Name="" Margin="0,0,0,0" Content="Toggle" ClickMode="Release" IsChecked="True" IsEnabled="True" IsThreeState="False"></ToggleButton>

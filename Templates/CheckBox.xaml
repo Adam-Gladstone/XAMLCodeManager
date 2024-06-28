@@ -1,0 +1,2 @@
+<!-- A control that a user can select or clear -->
+<CheckBox x:Name="" Margin="0,0,0,0" Content="Label" IsChecked="True" IsEnabled="True" IsThreeState="False"></CheckBox>

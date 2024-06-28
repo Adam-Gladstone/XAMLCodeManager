@@ -1,0 +1,2 @@
+<!-- A control that indicates indeterminate progress by displaying a ring. -->
+<ProgressRing x:Name="" Margin="0,0,0,0" IsActive="True"></ProgressRing>

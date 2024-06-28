@@ -1,0 +1,11 @@
+<!-- DatePickerFlyout -->
+<DatePickerFlyout
+    x:Name="z"
+    Margin="0,0,0,0"
+    CalendarIdentifier="GregorianCalendar"
+    DayFormat=""
+    DayVisible="True"
+    MonthFormat=""
+    MonthVisible="True"
+    Placement="Auto"
+    YearFormat="" />

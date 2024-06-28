@@ -1,0 +1,16 @@
+<!-- A specialized app bar that handles resizing of app bar button elements. CommandBar can be part of the Page.BottomAppBar or the Page.TopAppBar or placed anywhere as a control. -->
+<CommandBar
+    x:Name=""
+    Margin="0,0,0,0"
+    ClosedDisplayMode="Compact"
+    IsEnabled="True"
+    IsOpen="False"
+    IsSticky="False">
+    <CommandBar.Content>
+        <AppBarButton
+            x:Name="t"
+            Icon="AddFriend"
+            Label="Add Friend" />
+    </CommandBar.Content>
+</CommandBar>
+

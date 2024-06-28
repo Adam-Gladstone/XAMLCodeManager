@@ -1,0 +1,6 @@
+<!-- A control that presents a collection of items that the user can flip through, one item at a time. -->
+<FlipView
+    x:Name=""
+    Margin="0,0,0,0"
+    Background="AliceBlue" />
+

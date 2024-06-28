@@ -1,0 +1,10 @@
+<!-- A container control that lets the user view and navigate to different sections of content. -->
+<Hub
+    x:Name=""
+    Margin="0,0,0,0"
+    IsEnabled="True"
+    Orientation="Horizontal">
+    <Hub.Header>Header</Hub.Header>
+    <HubSection Header="Section" IsHeaderInteractive="True" />
+</Hub>
+

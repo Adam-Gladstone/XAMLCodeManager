@@ -1,0 +1,7 @@
+<!-- A control that presents an image -->
+<Image
+    x:Name=""
+    Margin="0,0,0,0"
+    Source="/Assets/"
+    Stretch="None" />
+

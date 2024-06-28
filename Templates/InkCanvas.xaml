@@ -1,0 +1,2 @@
+<!-- A control that receives and displays ink strokes. -->
+<InkCanvas x:Name="" Margin="0,0,0,0"></InkCanvas>

@@ -1,0 +1,9 @@
+<!-- A control that lets the user set a time value. -->
+<TimePicker
+    x:Name=""
+    Margin="0,0,0,0"
+    ClockIdentifier="12HourClock"
+    Header="Select Time"
+    IsEnabled="True"
+    MinuteIncrement="1" />
+

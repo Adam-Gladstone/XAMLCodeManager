@@ -1,0 +1,2 @@
+<!-- A control that responds to user input and raises a click event -->
+<Button x:Name="" Margin="0,0,0,0" Content="Name" ClickMode="Release" IsEnabled="True"></Button>

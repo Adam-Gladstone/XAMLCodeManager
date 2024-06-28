@@ -1,0 +1,10 @@
+<!-- A button that raises its Click event repeatedly from the time it is pressed until it is released -->
+<RepeatButton
+    x:Name=""
+    Margin="0,0,0,0"
+    ClickMode="Release"
+    Content="RepeatButton"
+    Delay="500"
+    Interval="30"
+    IsEnabled="True" />
+
