@@ -4,7 +4,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/Adam-Gladstone/XAMLCodeManager">
-    <img src="XAMLCodeManager/Assets/WindowIcon.ico" alt="logo" width="80" height="80">
+    <img src="CodeManager/Assets/WindowIcon.ico" alt="logo" width="80" height="80">
   </a>
 
   <h3 align="center">XAMLCodeManager (v1.0)</h3>
@@ -15,7 +15,7 @@
     <br />
     <br />
     <a href="https://github.com/Adam-Gladstone/XAMLCodeManager/issues">Report Bug</a>
-    �
+    ·
     <a href="https://github.com/Adam-Gladstone/XAMLCodeManager/issues">Request Feature</a>
   </p>
 </div>
@@ -114,7 +114,7 @@ On selecting a code snippet (e.g. Border.xaml), the right-hand side displays the
 Either double-click the selected item, or press the Copy button. This will invoke a dialog box requesting a name for the selected item. Add a name for the item and press ok.
 
 <a href="https://github.com/Adam-Gladstone/XAMLCodeManager">
-  <img src="Images/edit-template-params.png.png" alt="XAMLCodeManager Edit Template">
+  <img src="Images/edit-template-params.png" alt="XAMLCodeManager Edit Template">
 </a>
 
 The content is now ready to be pasted into the XAML editor with the desired name. Additional attributes can be added as usual.
