@@ -9,7 +9,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeManager.Core", "CodeMan
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CodeManager.Tests.MSTest", "CodeManager.Tests.MSTest\CodeManager.Tests.MSTest.csproj", "{1A789705-C899-43B7-AE59-BD1CB6CF03AB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileUtility", "FileUtility\FileUtility.csproj", "{2E340273-F1D0-4715-9CFC-1B58C2739C69}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FileUtility", "FileUtility\FileUtility.csproj", "{2E340273-F1D0-4715-9CFC-1B58C2739C69}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{7ED66D5C-EBB9-4413-A34E-F04CF5BE4185}"
+	ProjectSection(SolutionItems) = preProject
+		..\CHANGELOG.md = ..\CHANGELOG.md
+		..\LICENSE.md = ..\LICENSE.md
+		..\Project Notes.txt = ..\Project Notes.txt
+		..\README.md = ..\README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
