@@ -1,0 +1,227 @@
+﻿<Page
+    x:Class="CodeManager.Views.ListDetailsViewPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:controls="using:CommunityToolkit.WinUI.UI.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:models="using:CodeManager.Core.Models"
+    mc:Ignorable="d">
+
+    <Page.Resources>
+
+        <!--  XamlUICommand to handle routing the AppBarButton command in the list view  -->
+        <XamlUICommand
+            x:Name="CopyCommand"
+            Command="{x:Bind ViewModel.CopyCommand}"
+            Description="Copy the XAML to the clipboard"
+            Label="Copy">
+
+            <XamlUICommand.IconSource>
+                <SymbolIconSource Symbol="Copy" />
+            </XamlUICommand.IconSource>
+
+            <XamlUICommand.KeyboardAccelerators>
+                <KeyboardAccelerator Key="D" Modifiers="Control" />
+            </XamlUICommand.KeyboardAccelerators>
+        </XamlUICommand>
+
+    </Page.Resources>
+
+
+    <!--  Main grid  -->
+    <Grid
+        Margin="0,0,0,80"
+        ColumnSpacing="0"
+        RowSpacing="0">
+
+        <!--  Two columns  -->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="2*" />
+        </Grid.ColumnDefinitions>
+
+        <!--  Two rows  -->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <!--  Grid inside the first row and column, containing AutoSuggest box and CommandBar  -->
+        <!--  This arrangment spans the two columns defined on the outer grid  -->
+        <Grid
+            Grid.ColumnSpan="2"
+            Height="52"
+            Margin="0,0,0,16"
+            HorizontalAlignment="Stretch"
+            Background="Transparent"
+            CornerRadius="4">
+
+            <!--  Two columns (as above)  -->
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="2*" />
+            </Grid.ColumnDefinitions>
+
+            <!--  AutoSuggest box for filtering and search  -->
+            <AutoSuggestBox
+                Margin="8,0"
+                HorizontalAlignment="Stretch"
+                VerticalAlignment="Center"
+                QueryIcon="Find"
+                QuerySubmitted="SearchBox_QuerySubmitted"
+                TextChanged="SearchBox_TextChanged" />
+
+            <!--  CommandBar for ListView operations  -->
+            <CommandBar
+                Grid.Column="1"
+                Background="Transparent"
+                DefaultLabelPosition="Right">
+
+                <!--  AppBarButton for the CopyToClipboard operation  -->
+                <AppBarButton
+                    Command="{x:Bind CopyToClipboardCommand, Mode=OneWay}"
+                    Icon="Copy"
+                    IsEnabled="{x:Bind ViewModel.HasCurrent, Mode=OneWay}"
+                    Label="Copy" />
+            </CommandBar>
+
+        </Grid>
+
+        <!--  List of XAML available templates (code snippets)  -->
+        <ListView
+            x:Name="TemplateListView"
+            Grid.Row="1"
+            DoubleTapped="TemplateListView_DoubleTapped"
+            IsDoubleTapEnabled="True"
+            ItemsSource="{x:Bind ViewModel.Items, Mode=OneWay}"
+            SelectedItem="{x:Bind ViewModel.Current, Mode=TwoWay}">
+
+            <!--  ListView.ItemTemplate defines how each item is displayed  -->
+            <ListView.ItemTemplate>
+
+                <!--  Associate the XAMLCodeTemplate class with the data template for the list view items  -->
+                <DataTemplate x:DataType="models:XAMLCodeTemplate">
+
+                    <!--  Encapsulate behaviours in a user control  -->
+                    <UserControl PointerEntered="ListViewItem_PointerEntered" PointerExited="ListViewItem_PointerExited">
+
+                        <!--  Layout items relative to this panel  -->
+                        <RelativePanel Background="Transparent">
+                            <!--  Font for the snippet  -->
+                            <FontIcon
+                                Margin="0,15,10,0"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Center"
+                                FontSize="32"
+                                Glyph="&#xe924;" />
+
+                            <!--  Item data from the XAMLCodeTemplate  -->
+                            <TextBlock
+                                Margin="38,8"
+                                RelativePanel.AlignLeftWithPanel="True"
+                                RelativePanel.AlignVerticalCenterWithPanel="True">
+                                <Run FontWeight="SemiBold" Text="{x:Bind Name, Mode=OneWay}" />
+                                <LineBreak />
+                                <Run Text="{x:Bind Type, Mode=OneWay}" />
+                            </TextBlock>
+
+                            <!--  StackPanel containing button(s) which appear when hovering over the item  -->
+                            <StackPanel
+                                x:Name="HoverButtons"
+                                Orientation="Horizontal"
+                                RelativePanel.AlignRightWithPanel="True"
+                                RelativePanel.AlignVerticalCenterWithPanel="True"
+                                Visibility="Collapsed">
+
+                                <!--  AppBarButton for the copy operation  -->
+                                <!--  This is linked to the XamlUICommand defined in the Page.Resources  -->
+                                <AppBarButton
+                                    Width="32"
+                                    HorizontalAlignment="Right"
+                                    Command="{StaticResource CopyCommand}"
+                                    CommandParameter="{x:Bind Name}"
+                                    IsCompact="True" />
+                            </StackPanel>
+
+                            <!--  Define the hovering states  -->
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="HoveringStates">
+                                    <VisualState x:Name="HoverButtonsHidden" />
+                                    <VisualState x:Name="HoverButtonsShown">
+                                        <VisualState.Setters>
+                                            <Setter Target="HoverButtons.Visibility" Value="Visible" />
+                                        </VisualState.Setters>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                        </RelativePanel>
+
+                    </UserControl>
+
+                </DataTemplate>
+
+            </ListView.ItemTemplate>
+
+        </ListView>
+
+        <!--  Grid containing the details  -->
+        <Grid
+            Grid.Row="1"
+            Grid.Column="1"
+            Margin="20"
+            Visibility="{x:Bind ViewModel.HasCurrent, Mode=OneWay}">
+
+            <!--  Two rows  -->
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <!--  Put the contents in a ScrollViewer  -->
+            <ScrollViewer>
+                <StackPanel HorizontalAlignment="Left">
+
+                    <!--  StackPanel for the title (icon + text)  -->
+                    <StackPanel HorizontalAlignment="Stretch" Orientation="Horizontal">
+
+                        <FontIcon
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            FontSize="48"
+                            Glyph="&#xe924;" />
+
+                        <TextBlock
+                            Margin="{StaticResource SmallLeftMargin}"
+                            VerticalAlignment="Center"
+                            Style="{ThemeResource TitleTextBlockStyle}"
+                            Text="{x:Bind ViewModel.Current.Name, Mode=OneWay}" />
+                    </StackPanel>
+
+                    <!--  StackPanel for the subtitle and contents  -->
+                    <StackPanel Padding="0,15,0,0">
+
+                        <!--  Subtitle  -->
+                        <TextBlock
+                            Margin="{StaticResource SmallTopMargin}"
+                            Style="{StaticResource DetailSubTitleStyle}"
+                            Text="Type" />
+                        <TextBlock Style="{StaticResource DetailBodyBaseMediumStyle}" Text="{x:Bind ViewModel.Current.Type, Mode=OneWay}" />
+
+                        <!--  Contents  -->
+                        <TextBlock
+                            Margin="{StaticResource MediumTopMargin}"
+                            Style="{StaticResource DetailSubTitleStyle}"
+                            Text="Contents" />
+                        <TextBlock Style="{StaticResource DetailBodyStyle}" Text="{x:Bind ViewModel.Current.Contents, Mode=OneWay}" />
+
+                    </StackPanel>
+
+                </StackPanel>
+
+            </ScrollViewer>
+
+        </Grid>
+
+    </Grid>
+
+</Page>
