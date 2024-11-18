@@ -94,6 +94,9 @@
             Grid.Row="1"
             DoubleTapped="TemplateListView_DoubleTapped"
             IsDoubleTapEnabled="True"
+            CanDrag="True"
+            CanDragItems="True"
+            DragItemsStarting="TemplateListView_DragItemsStarting"
             ItemsSource="{x:Bind ViewModel.Items, Mode=OneWay}"
             SelectedItem="{x:Bind ViewModel.Current, Mode=TwoWay}">
 

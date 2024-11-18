@@ -1,0 +1,48 @@
+<!--  DataGrid with two columns  -->
+<controls:DataGrid
+	x:Name=""
+	HorizontalAlignment="Stretch"
+	VerticalAlignment="Stretch"
+	AutoGenerateColumns="False"
+	HeadersVisibility="None"
+	IsReadOnly="True"
+	SelectionMode="Single"
+	VerticalScrollBarVisibility="Visible">
+
+	<!-- 
+    1) Define a class PropertItem
+	2) Create an ObservableCollection<PropertyItem> propertyItems = new ObservableCollection<PropertyItem>();
+	3) Populate it
+	4) Bind the item source and update the XAML bindings: Table.ItemsSource = propertyItems;
+	-->
+
+	<!--  Column Definitions  -->
+	<controls:DataGrid.Columns>
+
+		<!--  Column 1: PropertyName  -->
+		<controls:DataGridTextColumn Binding="" Header="Name">
+
+			<!--  Column Styles  -->
+			<controls:DataGridTextColumn.CellStyle>
+				<Style TargetType="controls:DataGridCell">
+					<Setter Property="FontWeight" Value="Bold" />
+				</Style>
+			</controls:DataGridTextColumn.CellStyle>
+
+		</controls:DataGridTextColumn>
+
+		<!--  Column 2: PropertyValue  -->
+		<controls:DataGridTextColumn Binding="" Header="Value">
+
+			<!--  Column Styles  -->
+			<controls:DataGridTextColumn.CellStyle>
+				<Style TargetType="controls:DataGridCell">
+					<Setter Property="FontWeight" Value="Normal" />
+				</Style>
+			</controls:DataGridTextColumn.CellStyle>
+
+		</controls:DataGridTextColumn>
+
+	</controls:DataGrid.Columns>
+
+</controls:DataGrid>

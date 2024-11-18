@@ -1,11 +1,15 @@
-﻿using System.Windows.Input;
+﻿using System.Text;
+using System.Windows.Input;
+using CodeManager.Core.Models;
 using CodeManager.ViewModels;
 using CommunityToolkit.Mvvm.Input;
 using Microsoft.UI.Input;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Input;
+using Microsoft.UI.Xaml.Media.Imaging;
 using Microsoft.UI.Xaml.Navigation;
+using Windows.ApplicationModel.DataTransfer;
 
 namespace CodeManager.Views;
 
@@ -81,5 +85,19 @@ public sealed partial class ListDetailsViewPage : Page
     private void TemplateListView_DoubleTapped(object? sender, DoubleTappedRoutedEventArgs e)
     {
         ViewModel?.TemplateParams();
+    }
+
+    private void TemplateListView_DragItemsStarting(object sender, DragItemsStartingEventArgs e)
+    {
+        var items = new StringBuilder();
+        foreach (var item in e.Items)
+        {
+            if (items.Length > 0) items.AppendLine();
+
+            items.Append(((XAMLCodeTemplate)item).Contents);
+        }
+
+        e.Data.SetText(items.ToString());
+        e.Data.RequestedOperation = DataPackageOperation.Copy;
     }
 }

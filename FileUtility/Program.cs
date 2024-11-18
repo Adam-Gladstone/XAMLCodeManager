@@ -4,7 +4,7 @@ internal class Program
 {
     private static void Main(string[] args)
     {
-        var templateDirectory = @"D:\Development\Projects\C#\XAML Code Manager\Templates\TEMP";
+        var templateDirectory = @"D:\Development\Projects\C#\XAMLCodeManager\Templates\TEMP";
 
         var items = new string[]
         {
