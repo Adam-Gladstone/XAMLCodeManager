@@ -1,4 +1,5 @@
 XAML Code Manager
+
 Separate WinUI app rather than an Extension. List control on the left with the name of the snippet (+ description), double click, get a handler for the snippet (generic => just get name; more sophisticated: read the attributes and generate a form to fill in with each attribute name and placeholder for the value), paste the results in the right hand side (rich text control). Copy button, insert in XAML.
 Inject XAML code for controls with all (most of) the options filled in with sensible defaults
 List of controls: …
