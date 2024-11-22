@@ -80,7 +80,8 @@
 
                 <!--  AppBarButton for the CopyToClipboard operation  -->
                 <AppBarButton
-                    Command="{x:Bind CopyToClipboardCommand, Mode=OneWay}"
+                    Command="{x:Bind CopyToClipboardCommand}"
+                    ToolTipService.ToolTip="Copy the selected XAML to the clipboard"
                     Icon="Copy"
                     IsEnabled="{x:Bind ViewModel.HasCurrent, Mode=OneWay}"
                     Label="Copy" />
@@ -92,11 +93,11 @@
         <ListView
             x:Name="TemplateListView"
             Grid.Row="1"
-            DoubleTapped="TemplateListView_DoubleTapped"
-            IsDoubleTapEnabled="True"
             CanDrag="True"
             CanDragItems="True"
+            DoubleTapped="TemplateListView_DoubleTapped"
             DragItemsStarting="TemplateListView_DragItemsStarting"
+            IsDoubleTapEnabled="True"
             ItemsSource="{x:Bind ViewModel.Items, Mode=OneWay}"
             SelectedItem="{x:Bind ViewModel.Current, Mode=TwoWay}">
 
@@ -208,14 +209,27 @@
                             Margin="{StaticResource SmallTopMargin}"
                             Style="{StaticResource DetailSubTitleStyle}"
                             Text="Type" />
-                        <TextBlock Style="{StaticResource DetailBodyBaseMediumStyle}" Text="{x:Bind ViewModel.Current.Type, Mode=OneWay}" />
+                        <TextBlock Style="{StaticResource DetailBodyBaseMediumStyle}" 
+                                   Text="{x:Bind ViewModel.Current.Type, Mode=OneWay}" />
+
+                        <!-- Helpstring -->
+                        <TextBlock
+                            Margin="{StaticResource SmallTopMargin}"
+                            Style="{StaticResource DetailSubTitleStyle}"
+                            Text="Purpose" />
+                        <TextBlock Style="{StaticResource DetailBodyBaseMediumStyle}" 
+                                   Text="{x:Bind ViewModel.Current.HelpString, Mode=OneWay}" />
 
                         <!--  Contents  -->
                         <TextBlock
                             Margin="{StaticResource MediumTopMargin}"
                             Style="{StaticResource DetailSubTitleStyle}"
                             Text="Contents" />
-                        <TextBlock Style="{StaticResource DetailBodyStyle}" Text="{x:Bind ViewModel.Current.Contents, Mode=OneWay}" />
+                        <TextBlock
+                            FontFamily="Cascadia Mono"
+                            FontSize="14"
+                            Style="{StaticResource DetailBodyStyle}"
+                            Text="{x:Bind ViewModel.Current.Contents, Mode=OneWay}" />
 
                     </StackPanel>
 

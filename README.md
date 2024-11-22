@@ -56,20 +56,20 @@ The point of the application is to avoid (if possible) a certain amount of repet
 ### Built With
 
 * Visual Studio 2022
-* C# (.NET7.0)
+* C# (.NET8.0)
 
 The following packages are used:
-CommunityToolkit.Mvvm	8.2.2
-CommunityToolkit.WinUI.UI.Controls	7.1.2
-Microsoft.Extensions.Hosting	8.0.0
-Microsoft.WindowsAppSDK	1.5.240607001
-Microsoft.Xaml.Behavios.WinUI.Managed	2.09
-WinUIEx	2.3.4
-
-coverlet.collector 6.0.2
-Microsoft.NET.Test.Sdk 17.10.0
-MSTest.TestAdapter 3.4.3
-MSTest.TestFramework 3.4.3
+- CommunityToolkit.Mvvm	8.3.2
+- CommunityToolkit.WinUI.UI.Controls.Primitives	8.1.240916
+- Microsoft.Extensions.Hosting	9.0.0
+- Microsoft.WindowsAppSDK	1.6.240923002
+- Microsoft.Xaml.Behaviors.WinUI.Managed	2.09
+- WinUIEx	2.4.2
+- NewtonsoftJson  13.03
+- coverlet.collector 6.0.2
+- Microsoft.NET.Test.Sdk 17.11.1
+- MSTest.TestAdapter 3.6.3
+- MSTest.TestFramework 3.6.3
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -79,10 +79,14 @@ The project can be downloaded from the GitHub repository in the usual way.
 
 The solution consists of four projects:
 
-CodeManager	this is the main UI
-CodeManager.Core	this defines the model and data services
-CodeManager.Tests.MSTest	test suite for the core functionality
-FileUtility	utility console application for generating XAML code snippets files
+- CodeManager: this is the main UI
+- CodeManager.Core: this defines the (XAML template) model and the (XAML template) data services
+- CodeManager.Tests.MSTest: test suite for the core functionality
+- FileUtility: utility console application for generating XAML code snippet files
+
+The CodeManager solution was generated using the Windows Community Toolkit template. The main components that were selected are the menu bar (for navigation), MVVM for the overall architecture, and a settings page.
+
+The design with a (master) list view in the left hand pane and a details view on the right is taken from the excellent article *"Building a Master-Detail page with WinUI 3 and MVVM"* on **XAML Brewer** (https://xamlbrewer.wordpress.com/2022/02/07/building-a-master-detail-page-with-winui-3-and-mvvm/).
 
 ### Prerequisites
 
@@ -122,6 +126,9 @@ The content is now ready to be pasted into the XAML editor with the desired name
 `<!-- A container control that draws a border, background or both around another object -->
 <Border x:Name="ctrlBorder" Margin="0,0,0,0" BorderThickness="5" CornerRadius="5" Padding="10"></Border>
 `
+
+If you don't need or want to name the XAML control (maybe you do not reference it in the code-behind class), you can simply drag the code snippet from the list and drop it into your editor.
+
 
 The XAML code snippets can be added to and extended in an obvious way: e.g. you can have different stack panels for 'horizontal' and 'vertical', different sized grids, and so on.
 

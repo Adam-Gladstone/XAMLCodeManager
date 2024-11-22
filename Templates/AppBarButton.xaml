@@ -1,9 +1,8 @@
 <!-- A button for showing commands using app bar styling -->
-<AppBarButton
-    x:Name=""
-    Click=""
-    ClickMode="Press"
-    Icon="Like"
-    IsCompact="False"
-    IsEnabled="True"
-    Label="AppBarButton" />
+<AppBarButton x:Name=""
+              Click=""
+              ClickMode="Press"
+              Icon="Like"
+              IsCompact="False"
+              IsEnabled="True"
+              Label="AppBarButton" />

@@ -1,8 +1,6 @@
 # Issues
 
 # Wishlist
-- separate the comment from the code in the XAML file; display them separately in the detail view and don't copy the comment --> perhaps make this optional
-- ensure the formatting is maintained
 - add a refresh button (if you add new templates, repopulate the list)
 
 
@@ -26,3 +24,7 @@ This has some additional features: filter/search on the list; app command bar; l
 - Issue with Windows RIDs. Error: "error NETSDK1083: The specified RuntimeIdentifier 'win10-arm64' is not recognized" 
   Update RIDs to not specify win10 (https://learn.microsoft.com/en-gb/dotnet/core/rid-catalog#windows-rids).
   Update the PublishProfiles under the project Properties.
+
+## 22/11/2024
+- Added separate 'Purpose' line in the details view. This contains the XAML helpstring if there is one.
+- Separate the comment from the code in the XAML file and display them separately in the detail view.
